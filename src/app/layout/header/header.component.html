@@ -1,0 +1,25 @@
+<header>
+  <div class="header">
+    <div class="logo">
+      <h1>Blog</h1>
+    </div>
+    <div
+      class="header__icon-nav-responsive"
+      [class.iconMenuResponsive]="iconMenuResponsive"
+      (click)="openMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav
+      class="header__nav"
+      [class.animationItensMenuResponsive]="animationItensMenuResponsive"
+    >
+      <ul>
+        <li><a class="new-post" [routerLink]="['/posts/new']">New Post</a></li>
+        <li><a class="all-post" [routerLink]="['/posts']">All Posts</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
