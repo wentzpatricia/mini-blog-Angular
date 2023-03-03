@@ -1,0 +1,32 @@
+<div class="form">
+  <h2>New Post</h2>
+  <form [formGroup]="formPost" class="formPost" (ngSubmit)="submit()">
+    <div>
+      <input
+        class="form-control"
+        type="text"
+        formControlName="title"
+        placeholder="Title of the post"
+      />
+    </div>
+
+    <div>
+      <textarea
+        class="form-control"
+        rows="4"
+        cols="50"
+        formControlName="body"
+        placeholder="Say something in your post ..."
+      ></textarea>
+    </div>
+    <div class="btn-form">
+      <button
+        class="btn-form__submit"
+        type="submit"
+        [disabled]="!formPost.valid"
+      >
+        Cadastrar
+      </button>
+    </div>
+  </form>
+</div>

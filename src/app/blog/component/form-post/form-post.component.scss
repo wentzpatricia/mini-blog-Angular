@@ -1,0 +1,46 @@
+@use "../../../scss/colors.scss" as *;
+
+.form {
+  margin: 30px auto;
+  width: 580px;
+  border: $border-1;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: $background-color-2;
+  h2 {
+    color: $font-color-3;
+  }
+  .form-label {
+    margin: 10px 0;
+    width: 100%;
+    display: block;
+  }
+  .form-control {
+    width: 100%;
+    height: 30px;
+    margin: 10px 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    align-items: center;
+    border: $border-1;
+    border-radius: 5px;
+  }
+
+  .btn-form {
+    &__submit {
+      background-color: $background-color-1;
+      border: none;
+      border-radius: 5px;
+      height: 25px;
+      margin: 10px;
+      color: $background-color-2;
+      transition: 0.3s ease-in-out;
+      &[type="submit"]:disabled {
+        opacity: 0.5;
+      }
+      &:hover {
+        transition: 0.3s ease-in-out;
+        transform: scale(1.1);
+      }
+    }
+  }
+}

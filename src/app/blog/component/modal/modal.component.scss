@@ -1,0 +1,55 @@
+$background-modal: #f2f2f2;
+$background-overlay: #0d0d0d;
+$box-shadow: 0 2px 8px #333;
+
+$notebook-width: 992px;
+$tablet-width: 768px;
+$mobile-width: 535px;
+
+@mixin notebook {
+  @media only screen and (max-width: $notebook-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (max-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media only screen and (max-width: $mobile-width) {
+    @content;
+  }
+}
+
+.modal {
+  background: $background-modal;
+  border-radius: 8px;
+  box-shadow: $box-shadow;
+  max-width: 700px;
+  position: fixed;
+  left: 50%;
+  padding: 24px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  @include tablet {
+    min-width: 500px;
+  }
+  @include mobile {
+    min-width: 350px;
+  }
+}
+
+.overlay {
+  background: $background-overlay;
+  height: 100vh;
+  left: 0;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 10;
+}
