@@ -1,0 +1,63 @@
+@use "../../../scss/colors.scss" as *;
+
+.container-comments {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: $border-1;
+  border-radius: 10px;
+  padding: 30px;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  &__title {
+    background-color: $background-color-1;
+    padding: 10px 20px;
+    border-radius: 10px;
+    width: 100%;
+    color: $background-color-2;
+    margin-bottom: 10px;
+    h2 {
+      margin: 10px 20px;
+    }
+  }
+}
+
+.comments {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: $background-color-2;
+  padding: 0 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+
+  .comments-left {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    margin: 10px;
+    &__img {
+      width: 75px;
+    }
+    &__name {
+      margin-top: 10px;
+      color: $font-color-2;
+    }
+    &__email {
+      color: $background-color-6;
+    }
+  }
+
+  .comments-right {
+    display: flex;
+    width: 55%;
+    &__content {
+      color: $background-color-6;
+      font-weight: lighter;
+      font-size: 16px;
+    }
+  }
+}

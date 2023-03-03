@@ -1,0 +1,20 @@
+<div class="container-comments">
+  <div class="container-comments__title">
+    <h2>Comments</h2>
+  </div>
+
+  <div class="comments" *ngFor="let item of comment">
+    <div class="comments-left">
+      <img
+        class="comments-left__img"
+        src="../../../../assets/user.png"
+        alt="illustration of a profile picture"
+      />
+      <h3 class="comments-left__name">{{ item.name }}</h3>
+      <p class="comments-left__email">{{ item.email }}</p>
+    </div>
+    <div class="comments-right">
+      <p class="comments-right__content">{{ item.body }}</p>
+    </div>
+  </div>
+</div>

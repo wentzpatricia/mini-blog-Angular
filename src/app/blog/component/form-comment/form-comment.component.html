@@ -1,0 +1,39 @@
+<div class="form">
+  <h2>Faça um comentário!</h2>
+  <form [formGroup]="formComment" class="formComment" (ngSubmit)="submit()">
+    <div>
+      <input
+        class="form-control"
+        type="name"
+        formControlName="name"
+        placeholder="Digite seu nome "
+      />
+    </div>
+    <div>
+      <input
+        class="form-control"
+        type="email"
+        formControlName="email"
+        placeholder="Digite seu email seuemail@email.com"
+      />
+    </div>
+    <div>
+      <textarea
+        class="form-control"
+        rows="4"
+        cols="50"
+        formControlName="body"
+        placeholder="Make a comment ..."
+      ></textarea>
+    </div>
+    <div class="btn-form">
+      <button
+        class="btn-form__submit"
+        type="submit"
+        [disabled]="!formComment.valid"
+      >
+        Cadastrar
+      </button>
+    </div>
+  </form>
+</div>
