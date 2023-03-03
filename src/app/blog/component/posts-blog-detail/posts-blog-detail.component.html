@@ -1,0 +1,56 @@
+<div class="container-posts-detail">
+  <div class="posts-detail" *ngIf="detailPost">
+    <div class="posts-detail__id">
+      <h2>{{ detailPost.id }}</h2>
+    </div>
+    <h1 class="posts-detail__title">{{ detailPost.title }}</h1>
+
+    <img
+      class="posts-detail__img"
+      src="../../../../assets/blog.jpg"
+      alt="pictures of three chocolate cakes"
+    />
+
+    <p class="posts-detail__body">{{ detailPost.body }}</p>
+
+    <div class="posts-detail__btn" *ngIf="detailPost">
+      <button
+        class="posts-detail__btn--comment"
+        (click)="modalComment.toggle()"
+      >
+        + Adicionar comentários
+      </button>
+      <button class="posts-detail__btn--edit" (click)="modalEditPost.toggle()">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+  </div>
+  <app-comments></app-comments>
+  <div class="container-comments" *ngIf="newComment">
+    <div class="container-comments__title">
+      <h2>New Comments</h2>
+    </div>
+
+    <div class="comments">
+      <div class="comments-left">
+        <img
+          class="comments-left__img"
+          src="../../../../assets/user.png"
+          alt="illustration of a profile picture"
+        />
+        <h3 class="comments-left__name">{{ newComment.name }}</h3>
+        <p class="comments-left__email">{{ newComment.email }}</p>
+      </div>
+      <div class="comments-right">
+        <p class="comments-right__content">{{ newComment.body }}</p>
+      </div>
+    </div>
+  </div>
+  <app-modal #modalComment>
+    <app-form-comment (commentValues)="reciverSubmit($event)">
+    </app-form-comment>
+  </app-modal>
+  <app-modal #modalEditPost>
+    <app-form-edit-post></app-form-edit-post>
+  </app-modal>
+</div>

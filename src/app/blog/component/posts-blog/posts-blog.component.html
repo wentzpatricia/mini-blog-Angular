@@ -1,0 +1,39 @@
+<div class="container-posts">
+  <div
+    class="posts"
+    *ngFor="
+      let item of data
+        | paginate
+          : {
+              itemsPerPage: itemsPerPage,
+              currentPage: page,
+              totalItems: totalItems
+            }
+    "
+  >
+    <h1 class="posts__title">{{ item.title }}</h1>
+
+    <div class="posts__button">
+      <button
+        class="posts__button--read"
+        [routerLink]="['/posts/details/', item.id]"
+      >
+        + leia mais
+      </button>
+      <button class="posts__button--chat">
+        <mat-icon> chat_bubble_outline</mat-icon>
+      </button>
+
+      <button class="posts__button--like">
+        <mat-icon>favorite_border</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="paginations">
+  <pagination-controls
+    class="paginations__controls"
+    (pageChange)="getPage((page = $event))"
+  ></pagination-controls>
+</div>
